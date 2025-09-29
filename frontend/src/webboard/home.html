@@ -1,11 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    hhhhh
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <link rel="stylesheet" href="home.css" />
+  </head>
+  <body>
+    <div class="nav-bar">
+      <div style="margin-left: 50px">
+        <h1 onclick="goTo('home')">Polycat</h1>
+      </div>
+      <div>
+        <input type="text" class="search" placeholder="Search" />
+      </div>
+      <div style="margin-right: 50px">
+        <div class="menu">
+          <a href="post.html">ตั้งกระทู้ </a>
+          <a style="margin-left: 20px;" href="#">การแจ้งเตือน</a>
+          <a style="margin-left: 50px;" id="user-area" href="profile.html"></a>
+          <!-- ✅ แสดงชื่อผู้ใช้ -->
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="sidebar">
+        <p>หมวดหมู่</p>
+        <div class="categories" onclick="toggleSubMenu(this)">
+          <a href="#">การ์ตูน <span class="arrow">▼</span></a>
+          <div class="sub-categories">
+            <a href="#">การ์ตูนญี่ปุ่น</a>
+            <a href="#">การ์ตูนไทย</a>
+            <a href="#">มังงะ</a>
+          </div>
+        </div>
+
+        <div class="categories" onclick="toggleSubMenu(this)">
+          <a href="#">กีฬา <span class="arrow">▼</span></a>
+          <div class="sub-categories">
+            <a href="#">ฟุตบอล</a>
+            <a href="#">วอลเลย์บอล</a>
+          </div>
+        </div>
+        <div class="categories" onclick="toggleSubMenu(this)">
+          <a href="#">สยองขวัญ <span class="arrow">▼</span></a>
+          <div class="sub-categories">
+            <a href="#">ผีไทย</a>
+            <a href="#">ผีต่างประเทศ</a>
+          </div>
+        </div>
+        <div class="categories" onclick="toggleSubMenu(this)">
+          <a href="#">การศึกษา <span class="arrow">▼</span></a>
+          <div class="sub-categories">
+            <a href="#">คณิตศาสตร์</a>
+            <a href="#">วิทยาศาสตร์</a>
+          </div>
+        </div>
+        <div class="categories" onclick="toggleSubMenu(this)">
+          <a href="#">หนัง <span class="arrow">▼</span></a>
+          <div class="sub-categories">
+            <a href="#">หนังไทย</a>
+            <a href="#">หนังฝรั่ง</a>
+          </div>
+        </div>
+        <div class="categories" onclick="toggleSubMenu(this)">
+          <a href="#">เกม <span class="arrow">▼</span></a>
+          <div class="sub-categories">
+            <a href="#">เกมออนไลน์</a>
+            <a href="#">บอร์ดเกม</a>
+          </div>
+        </div>
+
+        <div class="categories" onclick="toggleSubMenu(this)">
+          <a href="#">ท่องเที่ยว <span class="arrow">▼</span></a>
+          <div class="sub-categories">
+            <a href="#">ท่องเที่ยวในไทย</a>
+            <a href="#">ท่องเที่ยวต่างประเทศ</a>
+          </div>
+        </div>
+        <div class="categories">
+          <a href="#">อื่นๆ</a>
+        </div>
+      </div>
+    </div>
+    <div class="content" id="content">
+      <h2>กระทู้ล่าสุด</h2>
+      <div id="posts"></div>
+    </div>
+
+    <script src="js/home.js">
+
+      // console.log(username);
+    </script>
+  </body>
 </html>

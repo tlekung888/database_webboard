@@ -84,3 +84,7 @@ button:hover {
   margin-top: 10px;
   font-weight: 600;
 }
+
+.menu{
+  display: flex;
+}

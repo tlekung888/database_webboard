@@ -1,0 +1,126 @@
+body {
+    font-family: 'Sarabun', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== NAVBAR ===== */
+.nav-bar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    background-color: rgb(108, 46, 109);
+    align-items: center;
+    height: 80px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;   /* ให้อยู่บนสุด */
+    padding: 0 20px;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+h1 {
+    color: white;
+}
+
+.search {
+    width: 700px;
+    height: 30px;
+    border-radius: 5px;
+    border: none;
+    padding: 5px 10px;
+}
+
+.search:hover {
+    border: 2px solid black;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    background-color: rgb(105, 72, 136);
+    color: rgb(138, 138, 138);
+    width: 250px;                /* ย่อให้ไม่กินพื้นที่เกินไป */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 80px;                   /* ชิดใต้ navbar */
+    left: 0;
+    bottom: 0;
+    border-right: 1px solid #ddd;
+    padding-top: 20px;
+    overflow-y: auto;
+    font-size: 18px;
+}
+
+.categories {
+    padding: 12px;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 5px 15px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.categories a {
+    text-decoration: none;
+    color: #ffffff;
+    display: block;
+}
+
+/* ซ่อนหมวดย่อยไว้ก่อน */
+.sub-categories {
+    display: none;
+    padding-left: 15px;
+    margin-top: 8px;
+}
+
+.sub-categories a {
+    font-size: 16px;
+    color: #b4b4b4;
+}
+
+.arrow {
+    font-size: 12px;
+    margin-left: 10px;
+    color: grey;
+}
+
+/* ===== CONTENT ===== */
+.content {
+    margin-top: 80px;      /* เว้นจาก navbar */
+    margin-left: 250px;    /* เว้นจาก sidebar */
+    padding: 20px;
+    background-color: #f9f9f9;
+    min-height: calc(100vh - 80px);
+}
+
+.post {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.2s ease-in-out;
+}
+
+.post:hover {
+  transform: scale(1.01);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.post h3 {
+  margin-top: 0;
+  color: #333;
+}
+
+.post p {
+  color: #555;
+  line-height: 1.6;
+}
