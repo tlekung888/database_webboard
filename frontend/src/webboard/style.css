@@ -88,3 +88,17 @@ button:hover {
 .menu{
   display: flex;
 }
+
+
+.threads{
+  background-color: #667eea;
+}
+
+.profile-container {
+  max-width: 500px;
+  margin: 40px auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  background-color: #f9f9f9;
+}

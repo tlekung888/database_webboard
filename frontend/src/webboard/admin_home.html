@@ -3,16 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Home</title>
+    <title>Admin Home</title>
     <link rel="stylesheet" href="home.css" />
-    <!-- ใส่ใน HTML -->
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
   </head>
   <body>
     <div class="nav-bar">
       <div style="margin-left: 50px">
-        <h1 onclick="goTo('home')">Polycat</h1>
+        <h1 onclick="goTo('admin_home')">Polycat (Admin)</h1>
       </div>
       <div>
         <input type="text" class="search" id="search" placeholder="Search" />
@@ -22,7 +20,7 @@
           <a href="post.html">ตั้งกระทู้ </a>
           <a style="margin-left: 20px;" href="#">การแจ้งเตือน</a>
           <a style="margin-left: 50px;" id="user-area" href="profile.html"></a>
-          <!-- ✅ แสดงชื่อผู้ใช้ -->
+          <a style="margin-left: 20px; color: red; font-weight: bold;" href="admin.html">Admin Panel</a>
         </div>
       </div>
     </div>
@@ -37,7 +35,6 @@
             <a href="#">มังงะ</a>
           </div>
         </div>
-
         <div class="categories" onclick="toggleSubMenu(this)">
           <a href="#">กีฬา <span class="arrow">▼</span></a>
           <div class="sub-categories">
@@ -73,7 +70,6 @@
             <a href="#">บอร์ดเกม</a>
           </div>
         </div>
-
         <div class="categories" onclick="toggleSubMenu(this)">
           <a href="#">ท่องเที่ยว <span class="arrow">▼</span></a>
           <div class="sub-categories">
@@ -87,14 +83,16 @@
       </div>
     </div>
     <div class="content" id="content">
-      <h2>กระทู้ล่าสุด</h2>
+      <h2>กระทู้ล่าสุด (Admin)</h2>
       <div id="posts"></div>
     </div>
-
-    <script src="js/home.js">
-      
-
-      // console.log(username);
+    <script src="js/home.js"></script>
+    <script>
+      // ป้องกัน user ปกติ/guest เข้าหน้า admin_home
+      if (localStorage.getItem("role") !== "admin") {
+        alert("คุณไม่มีสิทธิ์เข้าถึงหน้านี้");
+        window.location.href = "home.html";
+      }
     </script>
   </body>
 </html>

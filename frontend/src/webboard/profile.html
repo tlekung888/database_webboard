@@ -1,29 +1,30 @@
+<!-- profile.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile</title>
 </head>
 <body>
-    <div class="nav-bar">
-      <div style="margin-left: 50px">
-        <h1 onclick="goTo('home')">Polycat</h1>
-      </div>
-      <div>
-        <input type="text" class="search" placeholder="Search" />
-      </div>
-      <div style="margin-right: 50px">
-        <div class="menu">
-          <a href="post.html">ตั้งกระทู้ </a>
-          <a style="margin-left: 20px;" href="#">การแจ้งเตือน</a>
-          <a style="margin-left: 50px;" id="user-area" href="profile.html"></a>
-          <!-- ✅ แสดงชื่อผู้ใช้ -->
-        </div>
-      </div>
-    </div>
-    <a  id="logout-btn" href="index.html">Logout</a>
-    <script src=""></script>
+  <h1>แก้ไขโปรไฟล์</h1>
+
+  <div id="profile-box">
+    <img id="avatar-img" src="" width="150" />
+    <p><b>Email:</b> <span id="email"></span></p>
+    <form id="edit-profile-form">
+      <label>คำอธิบาย:</label><br>
+      <textarea name="description" rows="4" cols="50"></textarea><br><br>
+      <label>เปลี่ยนรูป Avatar:</label>
+      <input type="file" name="avatar" accept="image/*" /><br><br>
+      <button type="submit">บันทึกการเปลี่ยนแปลง</button>
+    </form>
+    <p id="msg"></p>
+  </div>
+        <button id="logout-btn">Logout</button>
+
+
+  <script src="js/profile.js">
+  </script>
 </body>
 </html>

@@ -37,7 +37,7 @@ function addFormListeners() {
     const endpoint = isLogin ? "login" : "register";
 
     try {
-      const res = await fetch(`http://localhost:5000/api/${endpoint}`, {
+      const res = await fetch(`http://localhost:5000/api/auth/${endpoint}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -48,13 +48,33 @@ function addFormListeners() {
         msgEl.textContent = data.error || "Something went wrong";
         msgEl.className = "error";
       } else {
-        msgEl.textContent = isLogin ? "Welcome back!" : `Welcome, ${data.user.username}!`;
-        msgEl.className = "success";
-
         if (isLogin) {
+          msgEl.textContent = "Welcome back!";
+          msgEl.className = "success";
+
+          console.log('user from backend:', data.user);
+          alert('user from backend: ' + JSON.stringify(data.user));
           localStorage.setItem("username", data.user.username);
           localStorage.setItem("email", data.user.email);
-          setTimeout(() => (window.location.href = "home.html"), 1500);
+          localStorage.setItem("role", data.user.role);
+
+          setTimeout(() => {
+            if (data.user && data.user.username === "admin") {
+              window.location.href = "admin.html";
+            } else {
+              window.location.href = "home.html";
+            }
+          }, 1500);
+        } else {
+          msgEl.textContent = data.message || "สมัครสมาชิกสำเร็จ!";
+          msgEl.className = "success";
+
+          // ✅ ไม่ต้อง redirect ทันที — อาจให้ user login เอง
+          // หรือ redirect หลังจาก delay
+          setTimeout(() => {
+            isLogin = true;
+            renderForm();
+          }, 1500);
         }
       }
     } catch (err) {

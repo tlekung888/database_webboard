@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Tables</title>
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+  <div id="admin-user-section">
+    <h2>Manage Users</h2>
+    <table id="users-table" border="1">
+      <thead>
+        <tr>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th>Description</th>
+          <th>Avatar</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div id="admin-post-section">
+    <h2>Manage Posts</h2>
+    <table id="posts-table" border="1">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Username</th>
+          <th>Content</th>
+          <th>Category</th>
+          <th>Image</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <div id="admin-comment-section">
+    <h2>Manage Comments</h2>
+    <table id="comments-table" border="1">
+      <thead>
+        <tr>
+          <th>Post ID</th>
+          <th>Comment ID</th>
+          <th>Username</th>
+          <th>Content</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script src="js/admin.js"></script>
+</body>
+</html>
